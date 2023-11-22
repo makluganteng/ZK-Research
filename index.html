@@ -52,6 +52,34 @@
             bottom: 0;
             width: 100%;
         }
+        .blog-posts {
+            display: flex;
+            flex-direction: column; /* Posts stack vertically by default */
+            align-items: flex-start; /* Align posts to the left */
+            padding: 1em;
+        }
+    
+        .post {
+            margin: 1em 0; /* Margin for top and bottom */
+            padding: 1em;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            width: 100%; /* Full width on smaller screens */
+        }
+    
+        /* Responsive Design for wider screens */
+        @media (min-width: 768px) {
+            .blog-posts {
+                flex-direction: row; /* Posts in a row for wider screens */
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+    
+            .post {
+                width: calc(33% - 2em); /* Adjust width for wider screens */
+                margin: 1em; /* Margin around each post */
+            }
+        }
     </style>
 </head>
 <body>
@@ -70,6 +98,15 @@
     <div class="intro">
         <h2>About This Blog</h2>
         <p>This is a blog about Zero Knowledge Proof Research. Here you can find posts about ZKP , Cryptography, and more!</p>
+    </div>
+
+    <div class="blog-posts">
+        <div class="post">
+            <h3>Why ZKML is interesting ?? (Part 1)</h3>
+            <p>Well there are a lot of company and blogs people talking about ZKML and comparing it one another but i would like to give my experience playing around with ZKML while i was at Istanbul....</p>
+            <a href="/ZK-Research/posts/what-makes-zkml-interesting.html">Read More</a>
+        </div>
+        <!-- Add more posts as needed -->
     </div>
 
     <div class="blog-posts">
