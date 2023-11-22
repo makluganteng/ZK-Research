@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Why ZKML is interesting ? (Part 1)</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 0; padding: 0; }
+        .container { width: 80%; max-width: 800px; margin: auto; padding: 20px; }
+        .blog-post-title { color: #333; font-size: 2em; margin-bottom: 10px; }
+        .blog-post-meta { color: #666; font-size: 0.85em; margin-bottom: 20px; }
+        .blog-post-content { font-size: 1.1em; line-height: 1.6; }
+        .comments-section { margin-top: 40px; }
+        .comment { margin-bottom: 20px; }
+        .header { background: #333; color: white; text-align: center; padding: 1em; }
+        .nav-bar { background: #444; color: white; padding: 0.5em; text-align: center; }
+        .nav-bar a { color: white; margin: 0 10px; text-decoration: none; }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>Welcome to My ZK Research and Findings</h1>
+        <p>By: V.O.T 🧐</p>
+    </div>
+    <div class="nav-bar">
+        <a href="/index.html">Home</a> |
+        <a href="#">About</a> |
+        <a href="#">Contact</a>
+    </div>
+
+    <div class="container">
+        <h1 class="blog-post-title">Why ZKML is interesting ? (Part 1)</h1>
+        <div class="blog-post-meta">Published on <span class="date">22 November 2023</span> by <span class="author">V.O.T</span></div>
+        
+        <article class="blog-post-content">
+            <p>Well there are a lot of company and blogs people talking about ZKML and comparing it one another but i would like to give my experience playing around with ZKML while i was at Istanbul. Ive used Giza and EZKL from both my hackathons project and once i’m back home i decided to start researching about more in-depth ZKML. This blog will be focusing on why i find ZKML is interesting and what we can do with this tech. This post will be divided into 2 parts so that we can have each project and what i’ve learned that makes ZKML is interesting. Disclaimer all of this is my own opinion and feel free to DM me if there is a concept that is not correct :3 . </p>
+            <br />
+            <h1>How did it start ?</h1>
+            <p>
+                During my first hackathon, the Starknet Hacker House, hosted by the Starknet Foundation, our initial idea was to build a ZKML Marketplace. However, we soon realized a significant challenge: if the ML model is on-chain, it becomes visible to everyone globally, allowing anyone to replicate and create their own model. To address this, we used Giza, as it supports Cairo, making it provable using STARK. Our exploration into Giza was aimed at understanding how we could leverage this technology to develop a ZKML Marketplace.
+            </p>
+            <p>
+                We were fortunate to have Danilo from Kakarot as our mentor for this event which he is a great mentor 🫡. On the first day, we managed to outline the marketplace's workflow, envisioning it more as an infrastructure service product. This setup would allow users to call for inference on a private model, receive the result along with a proof, and then verify it independently using STARK. The STARK prover we utilized was the Lambdaworks Platinum Prover. It was an exciting experience to experiment with this prover. We integrated it into an API and CLI, enabling users to generate a proof effortlessly. Once a proof is generated, the user can verify it independently to confirm if the proof is valid.
+            </p>
+            <br />
+            <h1>What is the problem we're solving ?</h1>
+            <p>
+                <ul>
+                    <li>
+                        <h3>ZKMLs that are deployed on Starknet are “public” and can be used by everyone</h3>
+                        <p>What this means is that the user cant make the model private and take advantage to monetize the model so that people could use it.</p>
+                    </li>
+                    <li>
+                        <h3>Steep learning curve to get it running</h3>
+                        <p>If they were to do it on their own it will be hard for them to run it on their own since so many things needs to be set up.</p>
+                    </li>
+                    <li>
+                        <h3>Most off-chain ML platforms are technically a blackbox</h3>
+                        <p>There is no way to verify that they are using the actual model, e.g. GPT-4. No information on whether or not they changed one of the weights. it means that everything relies on trust and we wont know which version of the model you really using.</p>
+                    </li>
+                </ul>
+            </p>
+            <br />
+            <h1>Example how its being used</h1>
+            <p>
+                lets say we have a game of Tick Tac Toe and every time you call an inference you wouldn’t want to generate a proof then return result only if the proof is done generated, but what we did was a user will be able to get the inference result and our service will generate the proof in parallel and once the game is done it will send back the user all the proof that is generated for every inference. But the second problem would be not everyone would want to proof on every inference being called. So what we had in mind was to give an option on when the user wanted to generate a proof. They could just call the inference and not generate a proof which is a win win where user don’t need to waste so much computing power to generate proof when the user doesn't need it. But when the user needs the proof it will then be generated and given back to the user to verify.  
+            </p>
+            <br />
+            <h1>Reason why this is interesting ?</h1>
+            <h3>On-Chain Games and AW</h3>
+            <p>
+                This is where things gets interesting , imagine where people can have on-chain games or AW (autonomous world) where they can use a AI agent or ZKML on the games and just call it using our service and they can just pay by use anytime without setting up anything. We will support SDK and extension so that people could easily use it. This open up for more ideas to be build upon ZKML. This is why we gave an example on a Tic Tac Toe game for example because we saw a potential on using it on on-chain games and autonomous world. 
+            </p>
+            <h3>Other use cases</h3>
+            <p>
+                But this doesn’t mean its just limited to just games but it can be use for others. For example we want to use ZKML to call inference to predict a user’s credit scoring. What i had in mind to always wanted to build for my first ever ZKML project was to build a on-chain credit scoring where it uses storage proof to query historical data on chain and feed it into a ZKML model to genrate the result of the user’s credit scoring and give back the proof to the user to verify that inference and its being computed correctly. So this is an example of not using for just games but it can be use for others too. 
+            </p>
+            <br />
+            <h1>Continue</h1>
+            <p>
+                Continue part 2 :3
+            </p>
+        </article>       
+    </div>
+
+</body>
+</html>
