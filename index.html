@@ -5,17 +5,57 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My ZK Research and Findings</title>
     <style>
-        body { font-family: Arial, sans-serif; margin: 0; padding: 0; }
-        .header { background: #333; color: white; text-align: center; padding: 1em; }
-        .nav-bar { background: #444; color: white; padding: 0.5em; text-align: center; }
-        .nav-bar a { color: white; margin: 0 10px; text-decoration: none; }
-        .intro { padding: 2em; text-align: center; }
-        .blog-posts { display: flex; flex-wrap: wrap; justify-content: center; padding: 1em; }
-        .post { margin: 1em; padding: 1em; border: 1px solid #ddd; border-radius: 5px; width: calc(33% - 2em); }
-        .footer { background: #333; color: white; text-align: center; padding: 1em; }
+        html, body {
+            height: 100%; /* Make sure the html and body cover full height */
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+        }
+        .content-wrap {
+            min-height: calc(100% - 70px); /* Adjust the 70px based on your footer's height */
+            /* This makes sure that the content takes up at least the remaining height minus the footer height */
+        }
+        .header {
+            background: #333;
+            color: white;
+            text-align: center;
+            padding: 1em;
+        }
+        .nav-bar {
+            background: #444;
+            color: white;
+            padding: 0.5em;
+            text-align: center;
+        }
+        .nav-bar a {
+            color: white;
+            margin: 0 10px;
+            text-decoration: none;
+        }
+        .intro, .blog-posts {
+            padding: 2em;
+            text-align: center;
+        }
+        .post {
+            margin: 1em;
+            padding: 1em;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            width: calc(33% - 2em);
+        }
+        .footer {
+            background: #333;
+            color: white;
+            text-align: center;
+            padding: 1em;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+        }
     </style>
 </head>
 <body>
+    <div class="content-wrap">
     <div class="header">
         <h1>Welcome to My ZK Research and Findings</h1>
         <p>By: V.O.T 🧐</p>
@@ -40,6 +80,7 @@
         </div>
         <!-- Add more posts as needed -->
     </div>
+</div>
 
     <div class="footer">
         <p>&copy; 2023 V.O.T Blog</p>
